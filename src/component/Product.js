@@ -39,9 +39,9 @@ function Product() {
                         <Card.Text>
                                 Rs {product.price}
                         </Card.Text>
-                        {cartItems.includes(product.id) ? ( // If product is in cartItems, render Go to Cart button
+                        {cartItems.includes(product.id) ? (
                         <Button variant="secondary" onClick={goToCart}>Go to Cart</Button>
-                    ) : ( // Otherwise, render Add to Cart button
+                    ) : ( 
                         <Button variant="primary" onClick={() => addToCart(product)}>Add to Cart</Button>
                     )}
                 </Card.Body>
