@@ -2,12 +2,17 @@ import {useEffect,useState} from 'react';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
-import {useDispatch} from 'react-redux';
+import {useDispatch,useSelector} from 'react-redux';
 import { add } from '../store/cartSlice';
+import {useNavigate} from 'react-router-dom'
 
 function Product() {
     const [products,setProduct] = useState([]);
+    const [cartItems, setCartItems] = useState([]);
     const dispatch = useDispatch();
+    const navigate = useNavigate();
+    const allProducts = useSelector(state => state);
+    console.log(allProducts)
     useEffect(() => {
         fetch('https://fakestoreapi.com/products')
         .then(data => data.json())
@@ -16,6 +21,11 @@ function Product() {
 
     const addToCart = (product) => {
         dispatch(add(product))
+        setCartItems([...cartItems, product.id]);
+    }
+
+    const goToCart = () => {
+        navigate('/cart'); // Redirect to cart page
     }
 
     const cart = products.map(product => (
@@ -29,7 +39,11 @@ function Product() {
                         <Card.Text>
                                 Rs {product.price}
                         </Card.Text>
-                    <Button variant="primary" onClick={() => addToCart(product)}>Add to cart</Button>
+                        {cartItems.includes(product.id) ? ( // If product is in cartItems, render Go to Cart button
+                        <Button variant="secondary" onClick={goToCart}>Go to Cart</Button>
+                    ) : ( // Otherwise, render Add to Cart button
+                        <Button variant="primary" onClick={() => addToCart(product)}>Add to Cart</Button>
+                    )}
                 </Card.Body>
             </Card>   
         </div>
