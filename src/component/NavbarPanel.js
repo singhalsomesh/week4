@@ -19,7 +19,7 @@ function NavbarPanel() {
         <Navbar.Toggle />
         <Navbar.Collapse className='justify-content-end'>
             <Navbar.Text>
-               <Nav.Link to="/cart" as={Link}>My Bag {cart.length}</Nav.Link>
+               <Nav.Link to="/cart" as={Link}><i className="fa-solid fa-cart-shopping fa-lg" style={{color:'#74C0FC'}}></i> <span className='numberItem'>{cart.length}</span></Nav.Link>
             </Navbar.Text>
         </Navbar.Collapse>
       </Container>

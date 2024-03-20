@@ -10,3 +10,11 @@
   font-weight: 400;
   color: aqua;
 }
+
+.numberItem{
+  color: #FF204E;
+  font-weight: bold;
+  position: relative;
+  bottom: 1rem;
+  font-size: 1.2rem;
+}
