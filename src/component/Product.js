@@ -31,7 +31,7 @@ function Product() {
     }
 
     const goToCart = () => {
-        navigate('/cart'); // Redirect to cart page
+        navigate('/cart'); 
     }
 
     const handleViewDetails = (product) => {
@@ -104,7 +104,6 @@ function Product() {
         </Modal>
     );
 
-    // Logic for rendering pagination buttons
     const pageNumbers = [];
     for (let i = 1; i <= Math.ceil(products.length / itemsPerPage); i++) {
         pageNumbers.push(i);
