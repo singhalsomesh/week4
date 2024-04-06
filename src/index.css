@@ -18,3 +18,8 @@
   bottom: 1rem;
   font-size: 1.2rem;
 }
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    fill: red; /* Change to your desired color */
+}

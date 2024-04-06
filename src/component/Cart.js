@@ -23,7 +23,7 @@ const CartItem = ({ cartProducts }) => {
           <div key={product.id} className="card mb-3" style={{padding:'1rem'}}>
             <div className="row g-0">
               <div className="col-md-4">
-                <img src={product.image} alt="Product" className="img-fluid rounded-start" style={{width:'18rem',height:'18rem'}} />
+                <img src={product.thumbnail} alt="Product" className="img-fluid rounded-start" style={{width:'18rem',height:'18rem'}} />
               </div>
               <div className="col-md-8">
                 <div className="card-body">
