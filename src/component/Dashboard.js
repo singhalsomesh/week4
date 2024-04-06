@@ -7,7 +7,7 @@ function Dashboard() {
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex(prevIndex => (prevIndex === images.length - 1 ? 0 : prevIndex + 1)); // Ensure the index doesn't exceed the number of images
-    }, 3000); // Change the interval duration as needed
+    }, 3000);
 
     return () => clearInterval(interval);
   }, []);
